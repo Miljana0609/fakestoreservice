@@ -1,5 +1,6 @@
 package se.jensen.miljana.fakestoreservice.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import se.jensen.miljana.fakestoreservice.model.Product;
@@ -14,6 +15,8 @@ public class ProductService {
     private final ProductRepository repository;
     private final RestTemplate restTemplate;
 
+    @Value("${fakestore.url}")
+    String url;
 
     public ProductService(ProductRepository repository) {
         this.repository = repository;
@@ -22,9 +25,7 @@ public class ProductService {
 
 
     public List<Product> fetchAndSaveProducts() {
-
-        String url = "http://fakestoreservice-env.eba-pmbni5kh.eu-north-1.elasticbeanstalk.com/";
-
+        
         Product[] response = restTemplate.getForObject(
                 url,
                 Product[].class
