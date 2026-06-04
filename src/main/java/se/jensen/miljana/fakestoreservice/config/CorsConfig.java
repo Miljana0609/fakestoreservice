@@ -1,4 +1,4 @@
-package se.jensen.miljana.fakestoreservice.controller;
+package se.jensen.miljana.fakestoreservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
