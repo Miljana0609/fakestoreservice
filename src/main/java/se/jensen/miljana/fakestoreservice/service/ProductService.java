@@ -15,7 +15,7 @@ public class ProductService {
     private final RestTemplate restTemplate;
 
 
-    String url = "https://yahyatesting-env.eba-sarnymwd.eu-north-1.elasticbeanstalk.com/products";
+    String url = "http://fakestoreservice-env.eba-pmbni5kh.eu-north-1.elasticbeanstalk.com/";
 
     public ProductService(ProductRepository repository) {
         this.repository = repository;
