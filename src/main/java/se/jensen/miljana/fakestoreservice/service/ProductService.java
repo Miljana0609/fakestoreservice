@@ -14,9 +14,6 @@ public class ProductService {
     private final ProductRepository repository;
     private final RestTemplate restTemplate;
 
-
-    String url = "http://fakestoreservice-env.eba-pmbni5kh.eu-north-1.elasticbeanstalk.com/";
-
     public ProductService(ProductRepository repository) {
         this.repository = repository;
         this.restTemplate = new RestTemplate();
@@ -24,6 +21,7 @@ public class ProductService {
 
 
     public List<Product> fetchAndSaveProducts() {
+        String url = "http://fakestoreservice-env.eba-pmbni5kh.eu-north-1.elasticbeanstalk.com/";
 
         Product[] response = restTemplate.getForObject(
                 url,
